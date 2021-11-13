@@ -1,3 +1,6 @@
+/*!*********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css ***!
+  \*********************************************************************/
 /* --------------------CSS reset start -------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -529,7 +532,7 @@ h5{
     display: inline-block;
     padding-right: 59px;
     text-decoration: none;
-    background: url("../img/svg/arrow.svg") no-repeat right center;
+    background: url(501bf05c347981987291.svg) no-repeat right center;
 }
 
 .products-heading__row.first{
