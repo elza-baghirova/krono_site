@@ -426,11 +426,14 @@ h5{
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    padding-right: 7%;
+    padding-right: 5%;
 }
-.main-menu{
-    
+.main-menu{    
     width: 70%;
+}
+.menu-active{
+    transform: translateX(0) !important;
+
 }
 .main-menu ul{
     display: flex;
@@ -443,11 +446,54 @@ h5{
     color: rgb(255, 245, 227);
     text-decoration: none;
 }
-.main-sandwich{
+.sandwich{
+    display: none;
     position: relative;
-    height: 40PX;
-    width: 27px;
+    height: 27PX;
+    width: 40px;
 }
+
+.sandwich-line{
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    left: 0;
+}
+
+.sandwich-line__1{
+    top: 0;
+}
+.sandwich-line__2{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sandwich-line__3{
+    bottom: 0;
+}
+.main-sandwich-x{
+    z-index: 40;
+}
+.sandwich-x__line{
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    left: 0;
+}
+.sandwich-x__1{
+    top: 50%;
+    transform: rotate(-45deg);
+
+}
+.sandwich-x__2{
+    top: 50%;
+    transform: rotate(45deg);
+
+}
+
 .hero{
     height: 300px;
     background-color: #05377B;
@@ -622,7 +668,7 @@ h5{
     line-height: 60px;
     color: white;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 27px;
     left: 29px;
 }
@@ -679,11 +725,12 @@ h5{
     justify-content: space-between;
 }
 .menu-item{
-    margin: 0 50px;
+    margin: 0 3vw 40px;
 }
 .footer-items__menu{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .menu-item li{
     padding: 3px 0;
@@ -705,9 +752,47 @@ h5{
 
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
+    .main-menu{
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        background-color: #002147;
+        z-index:2;
+        padding: 75px 27%;
+        transform: translateX(100%);
+        transition: 0.2s all linear;
+        
+      }
+
+    .main-sandwich{
+        display: block;
+    }
+
     .nav__wrapper{
-        display: none !important;
+    }
+    
+    .main-menu ul{
+        display: flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        justify-content: center;
+        padding: 0 20px;
+    }
+    .menu-item li{
+        white-space: nowrap;
+    }
+    .main-menu__item{
+        font-size: 45px;
+        line-height: 1.7em;
+    }
+    .footer-items, .footer-items__menu{
+        justify-content: center;
+    }
+    .menu-item{
+        width: 50%; 
     }
 }
 @media screen and (max-width:500px){
@@ -717,9 +802,7 @@ h5{
     h3{
         font-size: 25px;
     }
-    .main-menu{
-        display: none;
-    }
+
     .pros-title{
         text-align: center;
         padding: 30px 0 30px ;
@@ -751,6 +834,10 @@ h5{
     }
     .products-heading__more{
         position: relative;
-        right: 20;
+        left: 50%;
     }
+
+    /* .footer-items__menu{
+        padding: 0 22vw;
+    } */
 }

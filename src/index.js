@@ -38,6 +38,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         moreProductNavs.classList.remove('hide');
     });
     
+    let mainSandwich = document.querySelector(".main-sandwich"),
+    mainMenu = document.querySelector(".main-menu"),
+    sandwichLine = document.querySelector(".sandwich-line"),
+    sandwichX = document.querySelector(".main-sandwich-x");
+
+    mainSandwich.addEventListener('click', ()=>{
+        mainMenu.classList.add('menu-active');
+        mainSandwich.style.display = 'none';
+        sandwichX.style.display = 'block';
+    });
+
+    sandwichX.addEventListener('click', ()=>{
+        mainMenu.classList.remove('menu-active');
+        mainSandwich.style.display = 'block';
+        sandwichX.style.display = 'none';
+    });
+
 
 
 
