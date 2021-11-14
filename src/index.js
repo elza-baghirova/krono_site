@@ -12,12 +12,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
         entriesArray.map((entry) => {
             if (entry.isIntersecting) {
                 // nav.classList.remove('visible');
-                console.log("not inter");
-                nav.style.backgroundColor = "rgb(5, 55, 123, 1)";
+                nav.style.padding = "24px 0";
+
+                nav.style.backgroundColor = "rgb(5, 55, 123, 0)";
             } else {
                 // nav.classList.add('visible');
-                nav.style.backgroundColor = "rgb(5, 55, 123, 0.5)";
-                console.log("inter");
+                nav.style.padding = "12px 0";
+
+                // nav.style.backgroundColor = "rgb(5, 55, 123, 0.4)";
+                nav.style.backgroundColor = "rgb(4, 28, 40, 0.5)";
             }
           });
     }
@@ -27,6 +30,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //starts observing specified element
     observer.observe(scrollDetector);
 
+    let seeMore = document.querySelector(".products-heading__more"),
+    moreProductNavs = document.querySelector(".more-product-navs");
+
+    seeMore.addEventListener('click', ()=>{
+        seeMore.classList.add('hide');
+        moreProductNavs.classList.remove('hide');
+    });
+    
+
+
+
+
+
+    //whole document height
     // var body = document.body,
     // html = document.documentElement;
     // var documentHeight = Math.max( body.scrollHeight, body.offsetHeight, 
