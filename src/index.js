@@ -55,44 +55,64 @@ document.addEventListener('DOMContentLoaded', () => {
         sandwichX.style.display = 'none';
     });
 
-    let gallerySortingNames = document.querySelectorAll(".gallery-sorting__name");
-    gallerySortingNames.forEach((element, i) => {
-        element.addEventListener("click", () => {
-            if (element.dataset.name === "js-hamisi"){
-                for (let n = 0; n < gallerySortingNames.length; n++) {                
-                    console.log(`show all dataset-${i}`, element.dataset.name);
-                    let sorted = document.querySelectorAll(".product-card__size__sm");
-                    // sorted.forEach((item)=>{item.style.display = "block"});                
+
+    let gallerySortingNames = document.querySelectorAll(".gallery-sorting__name"),
+        allItems = document.querySelectorAll(".product-card__size__sm");
+
+        function showHideAll(command) {
+        if (command === "show") {
+            allItems.forEach( (item) => {
+                item.style.display = "block";
+                 setTimeout(function () {
+                    item.classList.remove("gallery-hide")
+                }, 10);
+            });
+            console.log("show all completed");
+
+        }
+        else if (command === "hide") {
+            allItems.forEach(async (item) => {
+                item.classList.add("gallery-hide")
+            });
+             setTimeout(function () {
+                allItems.forEach((item) => { item.style.display = "none" });
+            }, 500);
+            console.log("hide all completed");
+        }
+    }
+
+    function gallerySorting() {
+        gallerySortingNames.forEach((element, i) => {
+            element.addEventListener("click", async () => {
+                if (element.dataset.name === "js-hamisi") {
+                    showHideAll("hide");
+
+                    await setTimeout(function () {
+                        showHideAll("show");
+                    }, 500);
                 }
-            }
-            else {
-                for (let n = 0; n < gallerySortingNames.length; n++) {                
-                    if (n === i) {
-                        let sorted = document.querySelectorAll("." + element.dataset.name);
-                        // sorted.forEach((item)=>{item.style.display = "block"});
-                    }
-                    else {
-                        let unSorted = document.querySelectorAll("." + gallerySortingNames[n].dataset.name);
-                        
-                        unSorted.forEach((item)=>{item.classList.add("gallery-hide")});
-                        setTimeout(function() {
-                            unSorted.forEach((item)=>{item.style.display = "none"});
-                          }, 2000);
-                    }
+                else {
+                    showHideAll("hide");
+
+                    let sorted = document.querySelectorAll("." + element.dataset.name);
+
+                    await setTimeout(function () {
+                        sorted.forEach((item) => {
+                            item.style.display = "block"
+                            setTimeout(function () {
+                                item.classList.remove("gallery-hide")
+                            }, 10);
+                        });
+                    }, 500);
+
                 }
-            }
+            });
+
         });
+    }
 
-    });
+    gallerySorting();
 
-
-
-
-    //whole document height
-    // var body = document.body,
-    // html = document.documentElement;
-    // var documentHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-    //     html.clientHeight, html.scrollHeight, html.offsetHeight );
 });
 
 //should stay at the end of the file

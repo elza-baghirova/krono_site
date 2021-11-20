@@ -608,7 +608,7 @@ h5 {
 }
 
 .main-sandwich-x {
-    z-index: 40;
+    z-index: 11;
 }
 
 .sandwich-x__line {
@@ -725,7 +725,9 @@ h5 {
     line-height: 24px;
     margin-bottom: 58px;
 }
-
+.about__desc span{
+    font-weight: 600;
+}
 .about__desc.second {
     padding-top: 30px;
 }
@@ -770,6 +772,113 @@ h5 {
     height: 2px;
 }
 
+/* --------------------modal start--------------------------------- */
+.product-modal {
+    z-index: 9;
+    position: fixed;
+    background: rgba(12, 70, 128, 0.5);
+    height: 1px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease 0.5s, height 0.5s ease;
+    width: 0;
+  }
+  
+  .content {
+    color: green;
+    font-family: 'Consolas', arial, sans-serif;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translate3d(0,-50%,0);
+    transition: color 0.5s ease;
+    width: 100%;
+  }
+  
+  label {
+    color: dodgerblue;
+    cursor: pointer;
+    font-family: 'Consolas', arial, sans-serif;
+    font-size: 2em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    transition: color 0.5s ease 0.5s;
+  }
+  .modal-button {
+      position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-button:focus {
+      outline: none;
+    } 
+  .modal-button:checked {
+    height: 40px;
+    opacity: 1;
+    position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 12;
+   -webkit-appearance: none;
+    width: 40px;
+
+  }
+
+  .modal-button:checked:before {
+    border-top: 1px solid blue;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 100%;
+  }
+  
+  .modal-button:checked:after {
+    z-index: 12;
+    border-top: 1px solid blue;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg);
+    width: 100%;
+  }
+  
+  /* .modal-button:checked + label {
+    color: red;
+    transition: color 0.5s ease,
+  } */
+  
+  .modal__checked {
+    background-color: rgba(12, 70, 128, 0.5);
+    height: 100%;
+    width: 100%;
+    transition: width 0.5s ease, height 0.5s ease 0.5s;
+
+  }
+  .content__checked{
+    z-index: 13;
+    color: magenta !important;
+    transition: color 0.5s ease 0.5s;
+  }
+/* --------------------modal end--------------------------------- */
+.gallery::after{
+    width: 73% !important;
+
+}
 .products-heading__title a {
     text-decoration: none;
     color: #102746;
@@ -788,13 +897,41 @@ h5 {
 }
 
 .gallery-hide{
-    overflow: hidden;
+    height: 0;
     opacity: 0;
+    -webkit-transition: all 0.5s 0s ease-out;
+    -moz-transition: all 0.5s 0s ease-out;
+    -o-transition: all 0.5s 0s ease-out;
+    transition: all 0.5s 0s ease-out;  
 }
-.gallery-show{
-    width: unset;
-    height: unset;
-}
+/* .gallery-show{
+    height: 100%;
+    opacity: 100;
+    -webkit-transition: all 2s 0s ease-out;
+    -moz-transition: all 2s 0s ease-out;
+    -o-transition: all 2s 0s ease-out;
+    transition: all 2s 0s ease-out;
+} */
+
+/* .product-card__size__sm:hover{
+    opacity : 0;
+    height: 0;
+    -webkit-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    -moz-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    -o-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    transition: all 2s 0s ease-out, width 0.5s 2s ease;  
+
+} */
+
+
+/* .show{
+    -webkit-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    -moz-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    -o-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    transition: all 2s 0s ease-out, opacity 0.5s 2s ease;   
+    position: unset;
+    opacity: 0;
+} */
 /* .gallery-sorting__names li::before {} */
 
 .gallery-sorting__names li {
@@ -839,7 +976,6 @@ h5 {
     gap: 10px;
     grid-template-columns: repeat(6, 1fr);
     margin-bottom: 20px;
-
 }
 
 .products__product {
@@ -853,11 +989,12 @@ h5 {
 
 .product-card__size__lg {
     grid-column: span 3;
-
+    position: relative;
 }
 
 .product-card__size__md {
     grid-column: span 2;
+    position: relative;
 }
 
 .products__row img {
@@ -889,9 +1026,7 @@ h5 {
     height: 210px;    
 }
 
-/* .product-card__size__sm:hover{
-    opacity : 0;
-} */
+
 .product-card__size__sm{
     -webkit-transition: all 2s 0s ease;
     -moz-transition: all 2s 0s ease;

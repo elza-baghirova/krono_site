@@ -791,14 +791,41 @@ h5 {
 }
 
 .gallery-hide{
-    overflow: hidden;
-    width: 0;
     height: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s 0s ease-out;
+    -moz-transition: all 0.5s 0s ease-out;
+    -o-transition: all 0.5s 0s ease-out;
+    transition: all 0.5s 0s ease-out;  
 }
-.gallery-show{
-    width: unset;
-    height: unset;
-}
+/* .gallery-show{
+    height: 100%;
+    opacity: 100;
+    -webkit-transition: all 2s 0s ease-out;
+    -moz-transition: all 2s 0s ease-out;
+    -o-transition: all 2s 0s ease-out;
+    transition: all 2s 0s ease-out;
+} */
+
+/* .product-card__size__sm:hover{
+    opacity : 0;
+    height: 0;
+    -webkit-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    -moz-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    -o-transition: all 2s 0s ease-out, width 0.5s 2s ease;
+    transition: all 2s 0s ease-out, width 0.5s 2s ease;  
+
+} */
+
+
+/* .show{
+    -webkit-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    -moz-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    -o-transition: all 2s 0s ease-out, opacity 0.5s 2s ease;
+    transition: all 2s 0s ease-out, opacity 0.5s 2s ease;   
+    position: unset;
+    opacity: 0;
+} */
 /* .gallery-sorting__names li::before {} */
 
 .gallery-sorting__names li {
@@ -843,7 +870,6 @@ h5 {
     gap: 10px;
     grid-template-columns: repeat(6, 1fr);
     margin-bottom: 20px;
-
 }
 
 .products__product {
@@ -890,11 +916,22 @@ h5 {
 
 .product-card__size__sm {
     grid-column: span 1;
-    height: 210px;
-    transition: 2s all linear;
-    
+    height: 210px;    
 }
 
+
+.product-card__size__sm{
+    -webkit-transition: all 2s 0s ease;
+    -moz-transition: all 2s 0s ease;
+    -o-transition: all 2s 0s ease;
+    transition: all 2s 0s ease;
+}
+/* .product-card__size__sm, .product, .product-caption__sm{
+    -webkit-transition: all 2s 0s ease;
+    -moz-transition: all 2s 0s ease;
+    -o-transition: all 2s 0s ease;
+    transition: all 2s 0s ease;
+} */
 .product-caption__sm {
     position: absolute;
     width: 100%;

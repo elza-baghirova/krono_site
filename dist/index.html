@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
+  <script src=""></script>
   <title>Krono</title>
 </head>
 
@@ -88,8 +89,8 @@
             Haqqımızda
           </h3>
           <p class="about__desc">
-            Krono Azərbaycan firması mebel istehsalı ucun lazım olan materialların
-            satışı sahəsində 20 illik təcrubəyə sahibdir. Firmamız Turkiyə, Azərbaycan,
+            <span>Krono Az</span>ərbaycan firması mebel istehsalı ucun lazım olan materialların
+            satışı sahəsində 20 illik təcrubəyə sahibdir. <br> Firmamız Turkiyə, Azərbaycan,
             Rusiya, Belarus və sair olkələrin qabaqcıl firmalarının istehsal etdikləri
             Laminat (Melaminli Yongar Lövhə) MDF (Orta sıxlıqlı lifli lövhə) Melaminli
             MDF, Parlaq MDF panel, Mətbəx Dəzgahları, Arxalıq (HDF), Kənar bantları
@@ -127,33 +128,40 @@
       </div>
       <div class="products__row">
         <figure class="products__product product-card__size__lg">
+          <input type="checkbox" class="modal-button" data-fig="metbex-dezgahi"></input>
           <img src="img/materiallar1.jpg" alt="product preview 1">
           <figcaption class="products-product__title">
             Mətbəx Dəzgahı
           </figcaption>
         </figure>
         <figure class="products__product product-card__size__lg">
+          <input type="checkbox" class="modal-button" data-fig="yongar-lovhe"></input>
           <img src="img/materiallar2.jpg" alt="product preview 2">
           <figcaption class="products-product__title">
             Yongar Lövhə
           </figcaption>
         </figure>
         <figure class="products__product product-card__size__md">
+          <input type="checkbox" class="modal-button" data-fig="mdf"></input>
           <img src="img/materiallar3.jpg" alt="product preview 3">
           <figcaption class="products-product__title">
             MDF
           </figcaption>
         </figure>
         <figure class="products__product product-card__size__md">
+          <input type="checkbox" class="modal-button" data-fig="arxaliq"></input>
           <img src="img/materiallar4.jpg" alt="product preview 4">
           <figcaption class="products-product__title">
             Arxalıq
           </figcaption>
         </figure>
         <figure class="products__product product-card__size__md">
+          <input type="checkbox" class="modal-button"></input>
           <img src="img/materiallar5.jpg" alt="product preview 5">
+          
+         
           <figcaption class="products-product__title">
-            Laminat
+            Laminat1
           </figcaption>
         </figure>
 
@@ -191,8 +199,17 @@
           </figcaption>
         </figure>
       </div>
+<!-- ----------------------Products modal window--------------------------- -->
+      <!-- <input class="modal-button" id='modal-button1' type='checkbox'>
+      <label for='modal-button1'> </label> -->
+
+      <div class='product-modal'>
+        <div class='content'>Pure CSS Modal! No JS!</div>
+      </div>
 
 
+
+<!-- ----------------------Products modal window--------------------------- -->
     </div>
   </section>
 
@@ -200,10 +217,10 @@
     <div class="products-wrapper">
       <div class="products-heading">
 
-        <div class="products-heading__title">
+        <div class="products-heading__title gallery">
           <a href="">
             <h2>
-              Laminat
+              Qalereya
             </h2>
           </a>
         </div>
